@@ -71,7 +71,7 @@ const result = await didit.sessions.create({
 if (!result.ok || !result.data) {
 ```
 
-From `lib/didit/browser.ts` (lines 49-58):
+From `lib/didit/browser.ts` (lines 79-88):
 
 ```ts
     void sdk.shared.startVerification({
@@ -95,7 +95,7 @@ The customer confirms with the passkey, then a selfie matched to the onboarding 
 
 ![A 5,000 EUR transfer to a new payee held with a passkey and selfie step-up and the Didit live feed explaining the rule](docs/images/alder-neobank-held-transaction.webp)
 
-From `lib/fintech/alder.ts` (lines 221-252):
+From `lib/fintech/alder.ts` (lines 222-253):
 
 ```ts
 export function newPayeeRule(stepUpWorkflowId: string) {
@@ -139,7 +139,7 @@ An event rule declines it and tags it as an account takeover.
 
 ![Alder blocking a sign-in without the passkey, with the Didit live feed showing the declined security event](docs/images/alder-neobank-fraud-blocked.webp)
 
-From `lib/fintech/alder.ts` (lines 256-279):
+From `lib/fintech/alder.ts` (lines 257-280):
 
 ```ts
 export function takeoverRule() {
